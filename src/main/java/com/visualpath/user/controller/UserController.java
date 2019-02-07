@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -28,11 +29,14 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Value("${welcome.message}")
+	private String welcomeMessage;
 
 	
 	@RequestMapping(value="/")
 	public String helloVisualPath() {
-		return "Hello VisualPath";
+		return welcomeMessage;
 		
 	}
 	

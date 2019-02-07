@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
+
+
 @Entity
 @XmlRootElement
 @NamedQuery(name = "User.findByLowerName", query = "SELECT u FROM User u WHERE u.name = LOWER(?1)")
@@ -49,4 +51,6 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	
 }
